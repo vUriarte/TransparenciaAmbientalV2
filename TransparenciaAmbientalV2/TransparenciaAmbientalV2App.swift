@@ -1,17 +1,13 @@
-//
-//  TransparenciaAmbientalV2App.swift
-//  TransparenciaAmbientalV2
-//
-//  Created by Victor Uriarte on 30/08/25.
-//
-
 import SwiftUI
 
 @main
 struct TransparenciaAmbientalV2App: App {
+    let coreData = CoreDataStack.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environment(\.managedObjectContext, coreData.viewContext)
         }
     }
 }
+
